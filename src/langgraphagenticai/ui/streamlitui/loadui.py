@@ -11,6 +11,7 @@ class LoadStreamlitUI:
         self.config =  Config() # config
         self.user_controls = {}
 
+    # this is about what we are storing in session
     def initialize_session(self):
         return {
         "current_step": "requirements",
@@ -21,7 +22,6 @@ class LoadStreamlitUI:
         "review_feedback": "",
         "decision": None
     }
-  
 
 
     def load_streamlit_ui(self):
@@ -31,8 +31,6 @@ class LoadStreamlitUI:
         st.session_state.IsFetchButtonClicked = False
         st.session_state.IsSDLC = False
         
-        
-
         with st.sidebar:
             # Get options from config
             llm_options = self.config.get_llm_options()
@@ -66,7 +64,5 @@ class LoadStreamlitUI:
             
             if "state" not in st.session_state:
                 st.session_state.state = self.initialize_session()
-            
-            
         
         return self.user_controls
