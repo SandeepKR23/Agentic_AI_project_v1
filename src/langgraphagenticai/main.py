@@ -31,7 +31,7 @@ def load_langgraph_agenticai_app():
     if user_message:
         try:
             # Configure LLM
-            obj_llm_config = GroqLLM(user_controls_input=user_input)
+            obj_llm_config = GroqLLM(user_controls_input = user_input)
             model = obj_llm_config.get_llm_model()
             
             if not model:
